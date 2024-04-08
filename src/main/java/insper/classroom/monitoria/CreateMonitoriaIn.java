@@ -12,7 +12,8 @@ public record CreateMonitoriaIn (
     String duracao,
     String descricao,
     String nome,
-    String id_professor
+    String id_professor,
+    String departamento
 ) {
     
 }

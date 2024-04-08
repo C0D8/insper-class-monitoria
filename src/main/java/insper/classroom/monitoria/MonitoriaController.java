@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import java.util.List;
 
 @FeignClient("classroom-monitoria")
 public interface MonitoriaController {
@@ -20,6 +21,12 @@ public interface MonitoriaController {
         @PathVariable(required = true) String id
         
     );
+
+    @GetMapping("monitorias/departamento/{id}")
+    ResponseEntity<List<CreateMonitoriaOut>> getByDepartamento (
+        @PathVariable(required = true) String id
+    );
+
     
    
 }
